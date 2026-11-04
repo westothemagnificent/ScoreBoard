@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dyf7wl48tti2g"]
+
+[ext_resource type="PackedScene" uid="uid://qukeoak2th5o" path="res://scenes/score_board.tscn" id="1_o5qli"]
+
+[node name="Main" type="Control" unique_id=1508330385]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="scoreBoard" parent="." unique_id=719670151 instance=ExtResource("1_o5qli")]
+layout_mode = 1
