@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://fobonssckpn2"]
+
+[ext_resource type="PackedScene" uid="uid://bqdqn00l81mri" path="res://scenes/team_base.tscn" id="1_6drq3"]
+[ext_resource type="Theme" uid="uid://85x2d12qffay" path="res://assets/team_venus_theme.tres" id="2_s8o24"]
+
+[node name="team" unique_id=1159679864 instance=ExtResource("1_6drq3")]
+theme = ExtResource("2_s8o24")
+
+[node name="teamName" parent="vbox/content/mainElements/margin/hbox/scoreDisplay" parent_id_path=PackedInt32Array(768175186) index="0" unique_id=1451444406]
+text = "VENUS"

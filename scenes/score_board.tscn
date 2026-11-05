@@ -1,14 +1,18 @@
 [gd_scene format=3 uid="uid://qukeoak2th5o"]
 
-[ext_resource type="StyleBox" uid="uid://bwlg1l303mxwh" path="res://assets/ghost_white_style_box.tres" id="1_ek31y"]
 [ext_resource type="Theme" uid="uid://dtt5m3uqnovk5" path="res://assets/score_banner_theme.tres" id="1_wcrpl"]
-[ext_resource type="StyleBox" uid="uid://bwvgikjiy0f12" path="res://assets/banner_blue_style_box.tres" id="2_gjtyh"]
+[ext_resource type="PackedScene" uid="uid://bekpyi7iix3rt" path="res://scenes/team_jupiter.tscn" id="3_t8f0e"]
+[ext_resource type="PackedScene" uid="uid://kw6roowjcpvb" path="res://scenes/team_mercury.tscn" id="4_dvfkj"]
+[ext_resource type="Script" uid="uid://8fbbmsgnu3nh" path="res://scripts/MatchFeedInitializer.cs" id="4_qnge1"]
+[ext_resource type="Texture2D" uid="uid://cukl6s3imdo7m" path="res://assets/test_card.png" id="4_t8f0e"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjtyh"]
-bg_color = Color(1, 1, 1, 0.15686275)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcrpl"]
-bg_color = Color(0, 0, 0, 0.15686275)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8f0e"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 1)
+corner_detail = 1
 
 [node name="scoreBoard" type="Panel" unique_id=1327842373]
 anchors_preset = 15
@@ -17,7 +21,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_wcrpl")
-theme_override_styles/panel = ExtResource("1_ek31y")
 
 [node name="vbox" type="VBoxContainer" parent="." unique_id=731226082]
 layout_mode = 1
@@ -26,72 +29,92 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="matchInfo" type="PanelContainer" parent="vbox" unique_id=452910400]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_type_variation = &"matchInfoBanner"
+
+[node name="matchInfo" type="Label" parent="vbox/matchInfo" unique_id=1410167828]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Match --"
+
+[node name="hbox" type="HBoxContainer" parent="vbox/matchInfo" unique_id=696106274]
+layout_mode = 2
+
+[node name="MissionToMarsLogo" type="PanelContainer" parent="vbox/matchInfo/hbox" unique_id=1232375827]
+layout_mode = 2
+theme_type_variation = &"MissionToMarsLogoBGColor"
+
+[node name="margin" type="MarginContainer" parent="vbox/matchInfo/hbox/MissionToMarsLogo" unique_id=1580733721]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="text" type="Label" parent="vbox/matchInfo/hbox/MissionToMarsLogo/margin" unique_id=1093399934]
+layout_mode = 2
+theme_type_variation = &"MissionToMarsLogoTextColor"
+text = "Mission To Mars"
 
 [node name="scoreBanner" type="PanelContainer" parent="vbox" unique_id=1464670319]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("2_gjtyh")
+theme_type_variation = &"inset"
 
-[node name="magrin" type="MarginContainer" parent="vbox/scoreBanner" unique_id=2035668955]
+[node name="hbox" type="HBoxContainer" parent="vbox/scoreBanner" unique_id=504128123]
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 10
+theme_override_constants/separation = 0
 
-[node name="hbox" type="HBoxContainer" parent="vbox/scoreBanner/magrin" unique_id=504128123]
+[node name="team" parent="vbox/scoreBanner/hbox" unique_id=1159679864 instance=ExtResource("4_dvfkj")]
+custom_minimum_size = Vector2(516, 79)
 layout_mode = 2
-theme_override_constants/separation = 80
 
-[node name="team1" type="PanelContainer" parent="vbox/scoreBanner/magrin/hbox" unique_id=1117146823]
+[node name="vsSeperator" type="PanelContainer" parent="vbox/scoreBanner/hbox" unique_id=260879779]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_gjtyh")
+theme_type_variation = &"vsSeperatorBG"
 
-[node name="margin" type="MarginContainer" parent="vbox/scoreBanner/magrin/hbox/team1" unique_id=717363155]
+[node name="margin" type="MarginContainer" parent="vbox/scoreBanner/hbox/vsSeperator" unique_id=1705883484]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
 
-[node name="score" type="Label" parent="vbox/scoreBanner/magrin/hbox/team1/margin" unique_id=1656530687]
-custom_minimum_size = Vector2(80, 50)
+[node name="text" type="Label" parent="vbox/scoreBanner/hbox/vsSeperator/margin" unique_id=621930138]
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_font_sizes/font_size = 50
-text = "80"
-horizontal_alignment = 1
+theme_type_variation = &"vsSeperatorText"
+text = "VS"
 
-[node name="team2" type="PanelContainer" parent="vbox/scoreBanner/magrin/hbox" unique_id=2078180679]
+[node name="team3" parent="vbox/scoreBanner/hbox" unique_id=259535135 instance=ExtResource("3_t8f0e")]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_wcrpl")
-
-[node name="margin" type="MarginContainer" parent="vbox/scoreBanner/magrin/hbox/team2" unique_id=2112036185]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="score" type="Label" parent="vbox/scoreBanner/magrin/hbox/team2/margin" unique_id=1756949032]
-custom_minimum_size = Vector2(80, 50)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-theme_override_font_sizes/font_size = 50
-text = "80"
-horizontal_alignment = 1
+useLeft = true
 
 [node name="margin" type="MarginContainer" parent="vbox" unique_id=153560062]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
 
-[node name="feed" type="VideoStreamPlayer" parent="vbox/margin" unique_id=564773060]
+[node name="errorNoFeed" type="TextureRect" parent="vbox/margin" unique_id=1292971900]
+modulate = Color(1.2363764, 1.2363764, 1.2363764, 1)
 layout_mode = 2
 size_flags_vertical = 3
+texture = ExtResource("4_t8f0e")
+script = ExtResource("4_qnge1")
+
+[node name="errorMessage" type="PanelContainer" parent="vbox/margin/errorNoFeed" unique_id=166813829]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -214.0
+offset_top = -20.0
+offset_right = 214.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t8f0e")
+
+[node name="text" type="Label" parent="vbox/margin/errorNoFeed/errorMessage" unique_id=1726788364]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "[UNABLE TO INITIALIZE MATCH FEED]"

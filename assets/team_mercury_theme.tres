@@ -1,0 +1,15 @@
+[gd_resource type="Theme" format=3 uid="uid://c0o4m4y6nlsi4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6c8x"]
+bg_color = Color(0.3515, 0.3552, 0.37, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w3om7"]
+bg_color = Color(0.2945, 0.2976, 0.31, 1)
+
+[resource]
+Button/font_sizes/font_size = 24
+Control/styles/panel = SubResource("StyleBoxFlat_i6c8x")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/font_sizes/font_size = 24
+inset/base_type = &"Control"
+inset/styles/panel = SubResource("StyleBoxFlat_w3om7")

@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bqdqn00l81mri"]
+
+[ext_resource type="Theme" uid="uid://cvu0hcg8ec20y" path="res://assets/team_base_theme.tres" id="1_sphai"]
+[ext_resource type="Script" uid="uid://caefej4t2nsw6" path="res://scripts/Team.cs" id="2_sphai"]
+[ext_resource type="Texture2D" uid="uid://qvcj0dqtj5n1" path="res://assets/hourGlass.svg" id="3_qrvvr"]
+
+[node name="team" type="PanelContainer" unique_id=1159679864]
+custom_minimum_size = Vector2(230, 79)
+offset_right = 516.0
+offset_bottom = 95.0
+size_flags_horizontal = 3
+theme = ExtResource("1_sphai")
+theme_type_variation = &"inset"
+script = ExtResource("2_sphai")
+
+[node name="vbox" type="VBoxContainer" parent="." unique_id=264523646]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="sepBanner" type="Panel" parent="vbox" unique_id=2052298739]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="content" type="HBoxContainer" parent="vbox" unique_id=1878095738]
+unique_name_in_owner = true
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="margin" type="MarginContainer" parent="vbox/content" unique_id=1264758055]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="mainElements" type="PanelContainer" parent="vbox/content" unique_id=1326976836]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="margin" type="MarginContainer" parent="vbox/content/mainElements" unique_id=1035597240]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="hbox" type="HBoxContainer" parent="vbox/content/mainElements/margin" unique_id=1125323433]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 0
+
+[node name="hbox" type="HBoxContainer" parent="vbox/content/mainElements/margin/hbox" unique_id=1341614940]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="vbox/content/mainElements/margin/hbox/hbox" unique_id=1776405898]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "00:00.00"
+
+[node name="TextureRect" type="TextureRect" parent="vbox/content/mainElements/margin/hbox/hbox" unique_id=1787793568]
+custom_minimum_size = Vector2(20, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_qrvvr")
+expand_mode = 1
+
+[node name="scoreDisplay" type="VBoxContainer" parent="vbox/content/mainElements/margin/hbox" unique_id=768175186]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="teamName" type="Label" parent="vbox/content/mainElements/margin/hbox/scoreDisplay" unique_id=1451444406]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 12
+text = "NAME"
+
+[node name="score" type="Label" parent="vbox/content/mainElements/margin/hbox/scoreDisplay" unique_id=747210414]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 44
+text = "300"
+horizontal_alignment = 1

@@ -1,6 +1,47 @@
 [gd_resource type="Theme" format=3 uid="uid://dtt5m3uqnovk5"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lod68"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.83137256, 0.72156864, 0.5411765, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdtng"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogttm"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.63, 0.48993, 0.2646, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cp4jt"]
+bg_color = Color(0.06, 0.06, 0.06, 1)
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n26w4"]
+bg_color = Color(1, 1, 1, 1)
+
 [resource]
 Button/font_sizes/font_size = 24
+Control/styles/panel = SubResource("StyleBoxFlat_lod68")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/font_sizes/font_size = 24
+MissionToMarsLogoBGColor/base_type = &"Control"
+MissionToMarsLogoBGColor/styles/panel = SubResource("StyleBoxFlat_tdtng")
+MissionToMarsLogoTextColor/base_type = &"Label"
+MissionToMarsLogoTextColor/colors/font_color = Color(0, 0, 0, 1)
+MissionToMarsLogoTextColor/colors/font_outline_color = Color(0, 0, 0, 1)
+inset/base_type = &"Control"
+inset/styles/panel = SubResource("StyleBoxFlat_ogttm")
+matchInfoBanner/base_type = &"Control"
+matchInfoBanner/styles/panel = SubResource("StyleBoxFlat_cp4jt")
+vsSeperatorBG/base_type = &"Control"
+vsSeperatorBG/styles/panel = SubResource("StyleBoxFlat_n26w4")
+vsSeperatorText/base_type = &"Label"
+vsSeperatorText/colors/font_color = Color(0, 0, 0, 1)
+vsSeperatorText/colors/font_outline_color = Color(0, 0, 0, 1)

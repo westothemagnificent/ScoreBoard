@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bekpyi7iix3rt"]
+
+[ext_resource type="PackedScene" uid="uid://bqdqn00l81mri" path="res://scenes/team_base.tscn" id="1_huh5y"]
+[ext_resource type="Theme" uid="uid://duxgre4iidjlp" path="res://assets/team_jupiter_theme.tres" id="2_37fx4"]
+
+[node name="team" unique_id=1159679864 instance=ExtResource("1_huh5y")]
+theme = ExtResource("2_37fx4")
+
+[node name="teamName" parent="vbox/content/mainElements/margin/hbox/scoreDisplay" parent_id_path=PackedInt32Array(768175186) index="0" unique_id=1451444406]
+text = "JUPITER"

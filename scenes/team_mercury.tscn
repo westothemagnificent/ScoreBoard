@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://kw6roowjcpvb"]
+
+[ext_resource type="PackedScene" uid="uid://bqdqn00l81mri" path="res://scenes/team_base.tscn" id="1_rsvy0"]
+[ext_resource type="Theme" uid="uid://c0o4m4y6nlsi4" path="res://assets/team_mercury_theme.tres" id="2_8epi8"]
+
+[node name="team" unique_id=1159679864 instance=ExtResource("1_rsvy0")]
+theme = ExtResource("2_8epi8")
+
+[node name="teamName" parent="vbox/content/mainElements/vbox" parent_id_path=PackedInt32Array(768175186) index="0" unique_id=1451444406]
+text = "MERCURY"
