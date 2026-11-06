@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-[Tool] public partial class Team : PanelContainer {
+public partial class Team : PanelContainer {
 
     // exports
 
@@ -17,6 +17,26 @@ using System;
         }
     }
 
+    [Export] public int score {
+        get;
+
+        set {
+            updateScore(value);
+
+            field = value;
+        }
+    }
+
+    [Export] public string name {
+        get;
+
+        set {
+            updateName(value);
+
+            field = value;
+        }
+    } = "NAME";
+
     // vars
     
     private HBoxContainer content;
@@ -27,7 +47,7 @@ using System;
 
     // functions
 
-    public override void _EnterTree() {
+    public override void _Ready() {
         content = GetNode<HBoxContainer>("%content");
 
         teamNameLabel = GetNode<Label>("%teamName");
@@ -35,10 +55,12 @@ using System;
 
 
         updateLayout(useLeft);
+        updateScore(score);
+        updateName(name);
     }
 
     private void updateLayout(bool pUseLeft) {
-        if (content == null) return;
+        if (!IsInsideTree()) { return; }
 
         if (pUseLeft) {
             content.LayoutDirection = LayoutDirectionEnum.Rtl;
@@ -48,4 +70,15 @@ using System;
         }
     }
 
+    private void updateScore(int pScore) {
+        if (!IsInsideTree()) { return; }
+
+        scoreLabel.Text = pScore.ToString();
+    }
+
+    private void updateName(string pName) {
+        if (!IsInsideTree()) { return; }
+
+        teamNameLabel.Text = pName;
+    }
 }

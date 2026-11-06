@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://qukeoak2th5o"]
 
 [ext_resource type="Theme" uid="uid://dtt5m3uqnovk5" path="res://assets/score_banner_theme.tres" id="1_wcrpl"]
-[ext_resource type="PackedScene" uid="uid://bekpyi7iix3rt" path="res://scenes/team_jupiter.tscn" id="3_t8f0e"]
-[ext_resource type="PackedScene" uid="uid://kw6roowjcpvb" path="res://scenes/team_mercury.tscn" id="4_dvfkj"]
+[ext_resource type="Script" uid="uid://buo7lk7t1hkfb" path="res://scripts/ScoreBoard.cs" id="2_2c4ns"]
 [ext_resource type="Script" uid="uid://8fbbmsgnu3nh" path="res://scripts/MatchFeedInitializer.cs" id="4_qnge1"]
 [ext_resource type="Texture2D" uid="uid://cukl6s3imdo7m" path="res://assets/test_card.png" id="4_t8f0e"]
 
@@ -21,6 +20,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_wcrpl")
+script = ExtResource("2_2c4ns")
+team1 = 1
+team2 = 2
 
 [node name="vbox" type="VBoxContainer" parent="." unique_id=731226082]
 layout_mode = 1
@@ -62,31 +64,24 @@ text = "Mission To Mars"
 layout_mode = 2
 theme_type_variation = &"inset"
 
-[node name="hbox" type="HBoxContainer" parent="vbox/scoreBanner" unique_id=504128123]
+[node name="teamsBanner" type="HBoxContainer" parent="vbox/scoreBanner" unique_id=504128123]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="team" parent="vbox/scoreBanner/hbox" unique_id=1159679864 instance=ExtResource("4_dvfkj")]
-custom_minimum_size = Vector2(516, 79)
-layout_mode = 2
-
-[node name="vsSeperator" type="PanelContainer" parent="vbox/scoreBanner/hbox" unique_id=260879779]
+[node name="vsSeperator" type="PanelContainer" parent="vbox/scoreBanner/teamsBanner" unique_id=260879779]
 layout_mode = 2
 theme_type_variation = &"vsSeperatorBG"
 
-[node name="margin" type="MarginContainer" parent="vbox/scoreBanner/hbox/vsSeperator" unique_id=1705883484]
+[node name="margin" type="MarginContainer" parent="vbox/scoreBanner/teamsBanner/vsSeperator" unique_id=1705883484]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 
-[node name="text" type="Label" parent="vbox/scoreBanner/hbox/vsSeperator/margin" unique_id=621930138]
+[node name="text" type="Label" parent="vbox/scoreBanner/teamsBanner/vsSeperator/margin" unique_id=621930138]
 layout_mode = 2
 theme_type_variation = &"vsSeperatorText"
 text = "VS"
-
-[node name="team3" parent="vbox/scoreBanner/hbox" unique_id=259535135 instance=ExtResource("3_t8f0e")]
-layout_mode = 2
-useLeft = true
 
 [node name="margin" type="MarginContainer" parent="vbox" unique_id=153560062]
 layout_mode = 2
