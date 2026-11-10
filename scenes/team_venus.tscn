@@ -6,9 +6,3 @@
 [node name="team" unique_id=1159679864 instance=ExtResource("1_6drq3")]
 theme = ExtResource("2_s8o24")
 name = "VENUS"
-
-[node name="teamName" parent="vbox/content/mainElements/margin/hbox/scoreDisplay" parent_id_path=PackedInt32Array(768175186) index="0" unique_id=1451444406]
-text = "VENUS"
-
-[node name="score" parent="vbox/content/mainElements/margin/hbox/scoreDisplay" parent_id_path=PackedInt32Array(768175186) index="1" unique_id=747210414]
-text = "0"

@@ -6,9 +6,3 @@
 [node name="team" unique_id=1159679864 instance=ExtResource("1_huh5y")]
 theme = ExtResource("2_37fx4")
 name = "JUPITER"
-
-[node name="teamName" parent="vbox/content/mainElements/margin/hbox/scoreDisplay" parent_id_path=PackedInt32Array(768175186) index="0" unique_id=1451444406]
-text = "JUPITER"
-
-[node name="score" parent="vbox/content/mainElements/margin/hbox/scoreDisplay" parent_id_path=PackedInt32Array(768175186) index="1" unique_id=747210414]
-text = "0"
