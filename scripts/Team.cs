@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Diagnostics;
 
 public partial class Team : PanelContainer {
 
@@ -27,6 +28,12 @@ public partial class Team : PanelContainer {
         }
     }
 
+    [Export] public string timerEsplasedTimeExportedString {
+        get => timerEsplasedTimeString;
+
+        set {}
+    }
+
     [Export] public string name {
         get;
 
@@ -38,21 +45,45 @@ public partial class Team : PanelContainer {
     } = "NAME";
 
     // vars
+
+    public TimeSpan timerEsplasedTime => timer.Elapsed;
+    public string timerEsplasedTimeString => $"{timerEsplasedTime.Minutes:D2}:{timerEsplasedTime.Seconds:D2}";
+
+    private Stopwatch timer = new Stopwatch();
+
+    // nodes
     
     private HBoxContainer content;
 
     private Label teamNameLabel;
     private Label scoreLabel;
+    private Label timerLabel;
 
+
+    // api
+
+    public void startTimer() {
+        timer.Reset();
+        timer.Start();
+    }
+
+    public void stopTimer() {
+        timer.Stop();
+    }
 
     // functions
+
+    public override void _Process(double delta) {
+        timerLabel.Text = timerEsplasedTimeString;
+    }
+
 
     public override void _Ready() {
         content = GetNode<HBoxContainer>("%content");
 
         teamNameLabel = GetNode<Label>("%teamName");
         scoreLabel = GetNode<Label>("%score");
-
+        timerLabel = GetNode<Label>("%timerDisplay");
 
         updateLayout(useLeft);
         updateScore(score);

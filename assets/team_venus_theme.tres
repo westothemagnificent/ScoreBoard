@@ -1,5 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://85x2d12qffay"]
 
+[ext_resource type="FontFile" uid="uid://bnr7n31uoensb" path="res://assets/fonts/JetBrainsMono-Bold.ttf" id="1_xn70a"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6c8x"]
 bg_color = Color(1, 0.7764706, 0.28627452, 1)
 
@@ -7,6 +9,7 @@ bg_color = Color(1, 0.7764706, 0.28627452, 1)
 bg_color = Color(0.75, 0.54812497, 0.11249998, 1)
 
 [resource]
+default_font = ExtResource("1_xn70a")
 Button/font_sizes/font_size = 24
 Control/styles/panel = SubResource("StyleBoxFlat_i6c8x")
 Label/colors/font_color = Color(1, 1, 1, 1)

@@ -42,18 +42,51 @@ public partial class ScoreBoard : Panel {
 
     // api
 
-    public void updateTeam1Score(int pScore) {
-        if (!IsInstanceValid(team1UI)) { return; }
-
-        team1UI.score = pScore;
+    public void startTeamTimer(TeamsPlaying pTeam) {
+        switch (pTeam) {
+            case TeamsPlaying.TEAM_1:
+                if (IsInstanceValid(team1UI)) { team1UI.startTimer(); }
+                break;
+            case TeamsPlaying.TEAM_2:
+                if (IsInstanceValid(team2UI)) { team2UI.startTimer(); }
+                break;
+        }
     }
 
-    public void updateTeam2Score(int pScore) {
-        if (!IsInstanceValid(team2UI)) { return; }
-
-        team2UI.score = pScore;
+    public void stopTeamTimer(TeamsPlaying pTeam) {
+        switch (pTeam) {
+            case TeamsPlaying.TEAM_1:
+                if (IsInstanceValid(team1UI)) { team1UI.stopTimer(); }
+                break;
+            case TeamsPlaying.TEAM_2:
+                if (IsInstanceValid(team2UI)) { team2UI.stopTimer(); }
+                break;
+        }
     }
 
+    public void setDisplayedTeamScore(TeamsPlaying pTeam, int pScore) {
+        switch (pTeam) {
+            case TeamsPlaying.TEAM_1:
+                if (IsInstanceValid(team1UI)) { team1UI.score = pScore; }
+                break;
+            case TeamsPlaying.TEAM_2:
+                if (IsInstanceValid(team2UI)) { team2UI.score = pScore; }
+                break;
+        }
+    }
+
+    public int getDisplayedTeamScore(TeamsPlaying pTeam) {
+        switch (pTeam) {
+            case TeamsPlaying.TEAM_1:
+                if (IsInstanceValid(team1UI)) { return team1UI.score; }
+                break;
+            case TeamsPlaying.TEAM_2:
+                if (IsInstanceValid(team2UI)) { return team2UI.score; }
+                break;
+        }
+
+        return 0;
+    }
 
     // functions
 
@@ -68,6 +101,11 @@ public partial class ScoreBoard : Panel {
 
         updateTeam1(team1);
         updateTeam2(team2);
+
+        setDisplayedTeamScore(TeamsPlaying.TEAM_1, 30);
+        setDisplayedTeamScore(TeamsPlaying.TEAM_2, 300);
+
+        startTeamTimer(TeamsPlaying.TEAM_1);
     }
 
     private void updateTeam1(AllTeams pTeam) {
