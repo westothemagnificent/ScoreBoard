@@ -5,3 +5,4 @@
 
 [node name="team" unique_id=1159679864 instance=ExtResource("1_rsvy0")]
 theme = ExtResource("2_8epi8")
+name = "MERCURY"

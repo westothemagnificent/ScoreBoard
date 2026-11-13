@@ -1,5 +1,8 @@
 using Godot;
+using MissionToMarsCommon;
 using System;
+
+namespace ScoreBroad;
 
 public partial class ScoreBoard : Panel {
 
@@ -170,20 +173,5 @@ public partial class ScoreBoard : Panel {
         Team teamUI = scene.Instantiate<Team>();
 
         return teamUI;
-    }
-    
-    
-    // types
-
-    public enum TeamsPlaying {
-        TEAM_1,
-        TEAM_2
-    }
-
-    public enum AllTeams {
-        MURCURY,
-        VENUS,
-        JUPITER,
-        SATURN
     }
 }

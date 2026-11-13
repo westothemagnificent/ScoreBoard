@@ -1,6 +1,8 @@
 using Godot;
 using System;
 
+namespace ScoreBroad;
+
 public partial class MatchFeedInitializer : Node {
 
     public override void _Ready() {

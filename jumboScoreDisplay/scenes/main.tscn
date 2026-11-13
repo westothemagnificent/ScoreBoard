@@ -12,3 +12,5 @@ grow_vertical = 2
 
 [node name="scoreBoard" parent="." unique_id=719670151 instance=ExtResource("1_o5qli")]
 layout_mode = 1
+team1 = 1
+team2 = 2

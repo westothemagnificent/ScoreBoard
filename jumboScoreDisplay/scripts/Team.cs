@@ -2,6 +2,8 @@ using Godot;
 using System;
 using System.Diagnostics;
 
+namespace ScoreBroad;
+
 public partial class Team : PanelContainer {
 
     // exports

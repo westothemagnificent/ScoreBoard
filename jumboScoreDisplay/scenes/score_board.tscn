@@ -21,8 +21,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_wcrpl")
 script = ExtResource("2_2c4ns")
-team1 = 1
-team2 = 2
+team2 = 3
 
 [node name="vbox" type="VBoxContainer" parent="." unique_id=731226082]
 layout_mode = 1
